@@ -1,0 +1,19 @@
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Dependencies
+frontend/node_modules/
+backend/node_modules/
+
+# Build and coverage output
+frontend/dist/
+backend/coverage/
+
+# Editor and operating-system files
+.DS_Store
+.idea/
+.vscode/
+*.log
+
