@@ -12,12 +12,10 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react()],
     server: {
-      proxy: {
-        "/api": {
-          target: apiProxyTarget,
-          changeOrigin: true,
-        },
-      },
+      proxy: ["/api", "/uploads"].reduce((proxy, path) => {
+        proxy[path] = { target: apiProxyTarget, changeOrigin: true };
+        return proxy;
+      }, {}),
     },
   };
 });

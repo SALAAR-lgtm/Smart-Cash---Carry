@@ -1,10 +1,15 @@
 import express from "express";
 
-export const app = express();
+export function createApp() {
+  const app = express();
 
-app.use(express.json());
+  app.use(express.json());
 
-app.get("/api/health", (_request, response) => {
-  response.status(200).json({ status: "ok" });
-});
+  app.get("/api/health", (_request, response) => {
+    response.status(200).json({ status: "ok" });
+  });
 
+  return app;
+}
+
+export const app = createApp();

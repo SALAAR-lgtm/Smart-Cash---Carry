@@ -10,10 +10,10 @@ backend/node_modules/
 # Build and coverage output
 frontend/dist/
 backend/coverage/
+backend/uploads/
 
 # Editor and operating-system files
 .DS_Store
 .idea/
 .vscode/
 *.log
-

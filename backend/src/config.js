@@ -21,5 +21,8 @@ function parsePort(value) {
 export const config = {
   databaseUrl: requireEnvironmentVariable("DATABASE_URL"),
   port: parsePort(requireEnvironmentVariable("PORT")),
+  adminUsername: requireEnvironmentVariable("ADMIN_USERNAME"),
+  adminPassword: requireEnvironmentVariable("ADMIN_PASSWORD"),
+  jwtSecret: requireEnvironmentVariable("JWT_SECRET"),
+  uploadsDir: process.env.UPLOADS_DIR ?? "/app/uploads",
 };
-

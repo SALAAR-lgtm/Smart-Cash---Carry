@@ -27,8 +27,14 @@ services:
       NODE_ENV: production
       PORT: ${BACKEND_PORT}
       DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${DB_HOST}:${DB_PORT}/${POSTGRES_DB}
+      ADMIN_USERNAME: ${ADMIN_USERNAME}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      UPLOADS_DIR: /app/uploads
     ports:
       - "${BACKEND_PORT}:${BACKEND_PORT}"
+    volumes:
+      - product_uploads:/app/uploads
     depends_on:
       db:
         condition: service_healthy
@@ -54,4 +60,4 @@ services:
 
 volumes:
   postgres_data:
-
+  product_uploads:
